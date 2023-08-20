@@ -1,5 +1,6 @@
 import Notiflix from 'notiflix';
 
+//  Задали налаштування для модальних вікон.
 Notiflix.Notify.init({
   clickToClose: true,
   position: 'center-center',
@@ -8,6 +9,7 @@ Notiflix.Notify.init({
   fontSize: '17px',
 });
 
+// Отримуємо необхідні елементи.
 const formEl = document.querySelector('.form');
 const formInputs = document.querySelectorAll('input');
 const formLabels = document.querySelectorAll('label');
@@ -46,7 +48,8 @@ function createPromise(position, delay) {
 }
 
 // СТИЛІ
-
+// ---------------------------
+// Стиль усієї форми.
 formEl.style.backgroundColor = 'teal';
 formEl.style.padding = '20px';
 formEl.style.borderRadius = '8px';
@@ -56,6 +59,7 @@ formEl.style.flexDirection = 'row';
 formEl.style.justifyContent = 'space-evenly';
 formEl.style.alignItems = 'center';
 
+// Стиль <Label>.
 formLabels.forEach(label => {
   label.style.fontSize = '17px';
   label.style.color = 'white';
@@ -65,6 +69,7 @@ formLabels.forEach(label => {
   label.style.alignItems = 'center';
 });
 
+// Стиль <Input>.
 formInputs.forEach(formInput => {
   formInput.style.margin = '10px';
   formInput.style.padding = '10px';
@@ -73,6 +78,7 @@ formInputs.forEach(formInput => {
   formInput.style.fontSize = '16px';
 });
 
+// Стиль <Button>.
 formButton.forEach(button => {
   button.style.padding = '10px 20px';
   button.style.backgroundColor = '#007bff';
@@ -84,7 +90,7 @@ formButton.forEach(button => {
   button.style.fontSize = '16px';
   button.style.transition = 'background-color 0.3s ease';
 
-  // Додаємо анімацію при натисканні кнопки
+  // Додаємо анімацію при натисканні або ховері кнопки
   button.addEventListener('mousedown', () => {
     button.style.transform = 'scale(0.8)';
   });
