@@ -131,7 +131,7 @@ fields.forEach(field => {
   field.style.margin = '10px';
   field.style.padding = '10px';
   field.style.border = '1px solid #ccc';
-  field.style.borderRadius = '15px';
+  field.style.borderRadius = '5px';
   field.style.textAlign = 'center';
   field.style.backgroundColor = 'rgba(23,60,97,.06)';
 });
