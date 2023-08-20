@@ -19,9 +19,8 @@ const secondsEl = document.querySelector('span[data-seconds]'); // Отри
 
 const intervalTime = 1000;
 let timeLine = null;
-
-btnStartEl.setAttribute('disabled', 'true');
-btnStartEl;
+btnStartEl.disabled = true;
+btnStartEl.style.backgroundColor = 'white';
 
 const options = {
   enableTime: true,
@@ -41,9 +40,11 @@ const options = {
           fontSize: '17px',
         }
       );
-      btnStartEl.setAttribute('disabled', 'true');
+
+      btnStartEl.disabled = true;
     } else {
-      btnStartEl.removeAttribute('disabled');
+      btnStartEl.disabled = false;
+      btnStartEl.style.backgroundColor = '#4CAF50';
     }
   },
 };
@@ -53,7 +54,7 @@ flatpickr('#datetime-picker', options);
 btnStartEl.addEventListener('click', handlerStart);
 
 function handlerStart() {
-  btnStartEl.setAttribute('disabled', 'true');
+  btnStartEl.disabled = true;
   const intervalID = setInterval(() => {
     if (timeLine >= 0) {
       addDate(convertMs(timeLine));
@@ -99,7 +100,7 @@ function addLeadingZero(value) {
 
 startButtons.forEach(button => {
   button.style.padding = '10px 20px';
-  button.style.backgroundColor = '#4CAF50';
+  button.style.backgroundColor = 'rgba(23,60,97,.06)';
   button.style.color = 'white';
   button.style.border = 'none';
   button.style.borderRadius = '5px';
