@@ -10,6 +10,8 @@ const stopButton = document.querySelector('[data-stop]');
 const bodyProperties = document.querySelector('body');
 stopButton.disabled = true; // відключаємо кнопку Стоп з підгрузки сторінки, так як вона зразу активна.
 
+let timerId = null;
+
 // Стилі кнопок
 bodyProperties.style.display = 'flex';
 bodyProperties.style.flexDirection = 'column';
@@ -33,7 +35,7 @@ function changeBackgroundColor() {
 startButton.addEventListener('click', () => {
   stopButton.disabled = false; // вмикаємо кнопку Стоп
   startButton.disabled = true; // відключаємо кнопку Старт
-  const timerId = setInterval(() => {
+  timerId = setInterval(() => {
     changeBackgroundColor();
   }, 1000);
   console.log(`Почав таймер у ID: ${timerId}`);
